@@ -10,6 +10,8 @@ class PlansController < ApplicationController
   # GET /plans/1
   # GET /plans/1.json
   def show
+      @courses = Course.all
+      @plans = Plan.where(user_id: current_user.id)
   end
 
   # GET /plans/new
